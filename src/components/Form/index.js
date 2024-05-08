@@ -4,16 +4,33 @@ import Dropdown from '../Dropdown';
 import Button from '../Button';
 import {useState} from 'react';
 
-const Form = () => {
+const Form = (props) => {
 
     const itens = [ 
-        'Human',
-        'Elf',
+        'Blood Elf',
+        'Dark Iron Dwarf',
+        'Dracthyr',
+        'Draenei',
         'Dwarf',
-        'Hobbit',
-        'Uru-khai',
+        'Gnome',
+        'Goblin',
+        'High Mountain Tauren',
+        'Human',
+        'Kul tiran',
+        'Lightforged Draenei',
+        'Mag\'har orc',
+        'Mechagnome',
+        'Nightborne',
+        'Night Elf',
         'Orc',
-        'Goblin'
+        'Pandaren',        
+        'Tauren',
+        'Troll',
+        'Undead',
+        'Void Elf',
+        'Vulpera',
+        'Worgen',
+        'Zandalari Troll'
     ]
 
     const [character, setCharacter] = useState('')
@@ -23,7 +40,12 @@ const Form = () => {
 
     const whenSubmiting = (event) => {
         event.preventDefault();
-        // console.log('Form submited => ', character, role, img, race);
+        props.addedChar({
+            character: character,
+            role: role,
+            img: img,
+            race: race
+        })
     }
 
     return (
@@ -34,13 +56,15 @@ const Form = () => {
                 <TextField 
                     mandatory={true} 
                     label="Character" 
+                    name="character"
                     placeholder="Character's name"
                     content={character} 
                     whenChanged={ content => setCharacter(content)}/>
 
                 <TextField 
                     mandatory={true} 
-                    label="Roles" 
+                    label="Class" 
+                    name="role"
                     placeholder="Character's class"
                     content = {role}
                     whenChanged = { content => setRole(content)}
@@ -48,6 +72,7 @@ const Form = () => {
 
                 <TextField 
                 label="Image" 
+                name="img"
                 placeholder="Photo"
                 content = {img}
                 whenChanged = { content => setImage(content)}
@@ -55,6 +80,7 @@ const Form = () => {
                 <Dropdown 
                     mandatory={true}
                     label="Race"
+                    name="race"
                     itens={itens}
                     content = {race}
                     whenChanged = {content => setRace(content)}
