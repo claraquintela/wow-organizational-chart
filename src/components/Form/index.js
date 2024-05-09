@@ -35,28 +35,30 @@ const Form = (props) => {
                     content={character} 
                     whenChanged={ content => setCharacter(content)}/>
 
+        
                 <TextField 
-                    mandatory={true} 
-                    label="Class" 
-                    name="role"
-                    placeholder="Character's class"
-                    content = {role}
-                    whenChanged = { content => setRole(content)}
-                    />
-
-                <TextField 
-                label="Image" 
-                name="img"
-                placeholder="Photo"
-                content = {img}
-                whenChanged = { content => setImage(content)}
+                    label="Image" 
+                    name="img"
+                    placeholder="Photo"
+                    content = {img}
+                    whenChanged = { content => setImage(content)}
                 /> 
+
                 <Dropdown 
                     mandatory={true}
                     label="Race"
                     name="race"
-                    rolesList={props.rolesList}
+                    list={props.racesList}
                     content = {race}
+                    whenChanged = {content => setRace(content)}
+                    />
+
+                <Dropdown 
+                    mandatory={true}
+                    label="Class"
+                    name="role"
+                    list={props.rolesList}
+                    content = {role}
                     whenChanged = {content => setRace(content)}
                     />
                 <Button>
