@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import Banner from './components/Banner';
 import Form from './components/Form';
-import Race from './components/Race';
+import Role from './components/Role';
 
 
 function App() {
@@ -222,7 +222,7 @@ const roles = [
       <Banner/>
       <h1 className="main-title">World of Warcraft: organizational chart</h1>
       <Form  racesList={races.map(race=>race.race)} rolesList={roles.map(role=>role.name)} addedChar={character => onAddChar(character)}/>
-      {races.map(race => <Race key={race.race} typerace={race.race} color1={race.color1} color2={race.color2}/>)}
+      {roles.map(role => <Role key={role.role} typerole={role.role} color1={role.color1} color2={role.color2}/>)}
 
    
     </div>
