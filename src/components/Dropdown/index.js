@@ -3,7 +3,7 @@ import './Dropdown.css';
 const Dropdown = (props) => {
 
     const whenTyping = (event) => {
-        console.log(event.target.value);
+     
         props.whenChanged(event.target.value);
     }
 

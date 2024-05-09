@@ -9,7 +9,6 @@ function App() {
   const [characters, setCharacters] = useState([])
 
   const onAddChar = (character) => {
-    console.log(character);
     setCharacters([...characters, character])
   }
 
@@ -74,7 +73,7 @@ function App() {
       color2: '#A0AFDA',
     },
     {
-      race: "Mag\'har Orc",
+      race: "Mag'har Orc",
       color1: "#750303",
       color2: "#E9B5B5",
     },
