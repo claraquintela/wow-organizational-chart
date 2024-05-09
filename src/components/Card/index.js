@@ -3,13 +3,13 @@ import './Card.css'
 const Card =(props) => {
 
     return (
-        <div className='colaborador'> 
-            <div className='cabecalho'>
-                <img src='/imagens/Varian.webp' alt=''/>
+        <div className='card'> 
+            <div className='card-top' style={{backgroundColor: props.color}}>
+                <img src={props.img} alt={props.character}/>
             </div>
-            <div className='rodape'>
-                <h4>Varian Wrynn</h4>
-                <h5>Warrior</h5>
+            <div className='card-footer'>
+                <h4>{props.character}</h4>
+                <h5>{props.race}</h5>
             </div>
         </div>
     )

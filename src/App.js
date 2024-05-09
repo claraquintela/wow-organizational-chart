@@ -216,13 +216,18 @@ const roles = [
 ]
 
 
-
   return (
     <div className="App">
       <Banner/>
       <h1 className="main-title">World of Warcraft: organizational chart</h1>
       <Form  racesList={races.map(race=>race.race)} rolesList={roles.map(role=>role.name)} addedChar={character => onAddChar(character)}/>
-      {roles.map(role => <Role key={role.role} typerole={role.role} color1={role.color1} color2={role.color2}/>)}
+      {roles.map(role => <Role 
+        key={role.name} 
+        typeRole={role.name} 
+        color1={role.color1} 
+        color2={role.color2}
+        characters={characters.filter(character => character.role == role.name)}
+        />)}
 
    
     </div>

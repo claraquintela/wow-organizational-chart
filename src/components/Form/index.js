@@ -14,11 +14,15 @@ const Form = (props) => {
     const whenSubmiting = (event) => {
         event.preventDefault();
         props.addedChar({
-            character: character,
-            role: role,
-            img: img,
-            race: race
+            character,
+            role,
+            img,
+            race
         })
+        setCharacter('')
+        setRole('')
+        setImage('')
+        setRace('')
     }
 
   
@@ -59,8 +63,9 @@ const Form = (props) => {
                     name="role"
                     list={props.rolesList}
                     content = {role}
-                    whenChanged = {content => setRace(content)}
+                    whenChanged = {content => setRole(content)}
                     />
+                    
                 <Button>
                     Save
                 </Button>

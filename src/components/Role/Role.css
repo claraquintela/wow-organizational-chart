@@ -1,12 +1,19 @@
-.block-race {
+.block-role {
+
     text-align: center;
     padding: 2rem;
     color: white;
+}
 
-    & h3{
-        font-size: 2rem;
-        border-bottom: 4px solid;
-        display: inline-block;
-        padding: 0.5rem;
-    }
+.block-role h3{
+    font-size: 2rem;
+    border-bottom: 4px solid;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+.block-role .all-cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
 }
