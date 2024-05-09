@@ -12,7 +12,7 @@ const Dropdown = (props) => {
                 {props.label}
             </label>
             <select onChange={whenTyping}>
-                {props.itens.map(item =><option key={item} value={props.value}> {item}</option> )}
+                {props.rolesList.map(item =><option key={item} value={props.value}> {item}</option> )}
             </select>
         </div>
     )

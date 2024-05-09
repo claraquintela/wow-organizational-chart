@@ -6,33 +6,6 @@ import {useState} from 'react';
 
 const Form = (props) => {
 
-    const itens = [ 
-        'Blood Elf',
-        'Dark Iron Dwarf',
-        'Dracthyr',
-        'Draenei',
-        'Dwarf',
-        'Gnome',
-        'Goblin',
-        'High Mountain Tauren',
-        'Human',
-        'Kul tiran',
-        'Lightforged Draenei',
-        'Mag\'har orc',
-        'Mechagnome',
-        'Nightborne',
-        'Night Elf',
-        'Orc',
-        'Pandaren',        
-        'Tauren',
-        'Troll',
-        'Undead',
-        'Void Elf',
-        'Vulpera',
-        'Worgen',
-        'Zandalari Troll'
-    ]
-
     const [character, setCharacter] = useState('')
     const [role, setRole] = useState('')    
     const [img, setImage] = useState('')
@@ -48,6 +21,7 @@ const Form = (props) => {
         })
     }
 
+  
     return (
 
         <section className='formulaire'>
@@ -81,7 +55,7 @@ const Form = (props) => {
                     mandatory={true}
                     label="Race"
                     name="race"
-                    itens={itens}
+                    rolesList={props.rolesList}
                     content = {race}
                     whenChanged = {content => setRace(content)}
                     />
