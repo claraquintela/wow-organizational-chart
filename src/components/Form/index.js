@@ -43,7 +43,7 @@ const Form = (props) => {
                 <TextField 
                     label="Image" 
                     name="img"
-                    placeholder="Photo"
+                    placeholder="Place an image's url. Uploading not working"
                     content = {img}
                     whenChanged = { content => setImage(content)}
                 /> 
