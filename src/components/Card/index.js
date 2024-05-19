@@ -10,6 +10,7 @@ const Card =(props) => {
             <div className='card-footer'>
                 <h4>{props.character}</h4>
                 <h5>{props.race}</h5>
+                <h5>{props.faction}</h5>
             </div>
         </div>
     )

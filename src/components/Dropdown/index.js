@@ -14,7 +14,7 @@ const Dropdown = (props) => {
             </label>
             <select onChange={whenTyping}>
                 <option value=''></option>
-                {props.list.map(item =><option key={item} value={props.value}> {item}</option> )}
+                {props.list.map(item =><option key={item} value={item}> {item}</option> )}
             </select>
         </div>
     )

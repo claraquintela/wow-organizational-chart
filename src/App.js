@@ -214,18 +214,32 @@ const roles = [
 
 ]
 
+const factions = [
+  { faction: 'Horde',
+    color: '#C10808'
+  },
+  { faction: 'Alliance',
+    color: '#0D3296'
+  }
+]
+
 
   return (
     <div className="App">
       <Banner/>
       <h1 className="main-title">World of Warcraft: organizational chart</h1>
-      <Form  racesList={races.map(race=>race.race)} rolesList={roles.map(role=>role.name)} addedChar={character => onAddChar(character)}/>
+      <Form  
+        racesList={races.map(race=>race.race)} 
+        rolesList={roles.map(role=>role.name)} 
+        factionsList={factions.map(faction=>faction.faction)} 
+        addedChar={character => onAddChar(character)}/>
+
       {roles.map(role => <Role 
         key={role.name} 
         typeRole={role.name} 
         color1={role.color1} 
         color2={role.color2}
-        characters={characters.filter(character => character.role == role.name)}
+        characters={characters.filter(character => character.role === role.name)}
         />)}
 
    

@@ -10,6 +10,7 @@ const Form = (props) => {
     const [role, setRole] = useState('')    
     const [img, setImage] = useState('')
     const [race, setRace] = useState('')
+    const [faction, setFaction] = useState('')
 
     const whenSubmiting = (event) => {
         event.preventDefault();
@@ -17,14 +18,15 @@ const Form = (props) => {
             character,
             role,
             img,
-            race
+            race,
+            faction
         })
         setCharacter('')
         setRole('')
         setImage('')
         setRace('')
+        event.currentTarget.reset()
     }
-
   
     return (
 
@@ -64,6 +66,15 @@ const Form = (props) => {
                     list={props.rolesList}
                     content = {role}
                     whenChanged = {content => setRole(content)}
+                    />
+
+                <Dropdown 
+                    mandatory={true}
+                    label="Faction"
+                    name="faction"
+                    list={props.factionsList}
+                    content = {faction}
+                    whenChanged = {content => setFaction(content)}
                     />
                     
                 <Button>
