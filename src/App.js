@@ -144,7 +144,6 @@ function App() {
     },
 ]
 
-
 const roles = [ 
   {
     name: "Death Knight",
@@ -223,6 +222,9 @@ const factions = [
   }
 ]
 
+function deleteChar(){
+  console.log("delete delete ");
+}
 
   return (
     <div className="App">
@@ -239,7 +241,9 @@ const factions = [
         typeRole={role.name} 
         color1={role.color1} 
         color2={role.color2}
+        factionColor={factions.map(faction=>faction.color)} 
         characters={characters.filter(character => character.role === role.name)}
+        onDelete={deleteChar}
         />)}
 
    
