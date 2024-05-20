@@ -1,9 +1,20 @@
 import './Card.css'
-import { AiFillCloseCircle } from "react-icons/ai";
+import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const Card =(props) => {
     
+    console.log(props );
+
     const factionColor = props.faction === "Horde" ? "#C10808" : "#0D3296";
+
+    function favorite(){
+       props.onFavorite(props.id)
+    }
+
+    const styleHeart = {
+        size: 25,
+        onClick: favorite
+    }
 
     return (
         <div className='card'> 
@@ -20,8 +31,12 @@ const Card =(props) => {
                 <h4>{props.character}</h4>
                 <h5>{props.race}</h5>
                 <h5>{props.faction}</h5>
-            </div>
-            
+                <div className='favorite'>
+                    {props.favorite 
+                    ? <AiFillHeart {...styleHeart} color={factionColor}/> 
+                    : <AiOutlineHeart {...styleHeart} color='#000000'/>}
+                </div>
+            </div> 
         </div>
     )
 }

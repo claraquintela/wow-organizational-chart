@@ -351,9 +351,17 @@ function App() {
 
 
   function deleteChar(id){
-    console.log(id);
-    console.log(characters);
     setCharacters(characters.filter(character => character.id !== id));
+  }
+
+  function pickFavorite(id) {
+    console.log(id);
+    
+    setCharacters(characters.map(character => {
+      console.log(character);
+      if(character.id === id) character.favorite = !character.favorite;
+      return character;
+    }))
   }
 
   return (
@@ -375,6 +383,7 @@ function App() {
         factionColor={factions.map(faction=>faction.color)} 
         characters={characters.filter(character => character.role === role.name)}
         onDelete={deleteChar}
+        onFavorite={pickFavorite} 
         />)}
 
    
