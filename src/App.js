@@ -97,8 +97,7 @@ function App() {
       role:'Warrior',
       faction:'Alliance',
       img:'/imagens/muradin.webp'
-    }
-    ,
+    },
     {
       id: uuidv4(),
       favorite:false,
@@ -116,7 +115,61 @@ function App() {
       role:'Hunter',
       faction:'Horde',
       img:'/imagens/lothemar.webp'
-    }
+    },
+    {
+      id: uuidv4(),
+      favorite:false,
+      character:'Ji Firepaw',
+      race:'Pandaren',
+      role:'Monk',
+      faction:'Horde',
+      img:'/imagens/ji.jpg'
+    },
+    {
+      id: uuidv4(),
+      favorite:false,
+      character:'Trade Prince Gallywix',
+      race:'Goblin',
+      role:'Rogue',
+      faction:'Horde',
+      img:'/imagens/gallywix.jpg'
+    } ,
+    {
+      id: uuidv4(),
+      favorite:false,
+      character:'Jaina Proudmore',
+      race:'Human',
+      role:'Mage',
+      faction:'Alliance',
+      img:'/imagens/jaina.webp'
+    },
+    {
+      id: uuidv4(),
+      favorite:false,
+      character:'Arthas Menethil',
+      race:'Human',
+      role:'Paladin',
+      faction:'Alliance',
+      img:'/imagens/arthas1.jpg'
+    },
+    {
+      id: uuidv4(),
+      favorite:false,
+      character:'Prophet Velen',
+      race:'Draenei',
+      role:'Priest',
+      faction:'Alliance',
+      img:'/imagens/velen.jpg'
+    },
+    {
+      id: uuidv4(),
+      favorite:false,
+      character:'Thrall Wyrmrest',
+      race:'Orc',
+      role:'Shaman',
+      faction:'Horde',
+      img:'/imagens/thrall.webp'
+    } ,
   ]
 
   const [characters, setCharacters] = useState(listChars)
@@ -349,16 +402,12 @@ function App() {
     }
   ]
 
-
   function deleteChar(id){
     setCharacters(characters.filter(character => character.id !== id));
   }
 
   function pickFavorite(id) {
-    console.log(id);
-    
-    setCharacters(characters.map(character => {
-      console.log(character);
+      setCharacters(characters.map(character => {
       if(character.id === id) character.favorite = !character.favorite;
       return character;
     }))

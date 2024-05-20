@@ -2,8 +2,6 @@ import './Card.css'
 import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const Card =(props) => {
-    
-    console.log(props );
 
     const factionColor = props.faction === "Horde" ? "#C10808" : "#0D3296";
 
