@@ -11,12 +11,12 @@ const Role =(props) => {
                 {props.characters.map((character,index) => {
                     return <Card 
                     key={index} 
+                    id={character.id}
                     character={character.character} 
                     race={character.race} 
                     faction={character.faction}
                     img={character.img} 
                     color={props.color1}
-                    factionColor={props.factionColor}
                     onDelete={props.onDelete}
                     />
                 })}
